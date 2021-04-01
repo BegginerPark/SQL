@@ -1,0 +1,24 @@
+-- 모든열 결과보기
+SELECT *
+FROM employees;
+
+
+
+-- 원하는 열들의 이름만 선택해서 결과보기
+-- employee_id 를 기준으로 내림 차순 정렬 후 결과 보기
+SELECT employee_id, first_name, last_name
+FROM employees
+ORDER BY employee_id DESC, first_name ASC; -- DESC 내림차순
+
+
+
+-- 특정 열만 출력
+-- DISTINCT 를 사용해서 중복된 값 제거후 출력
+SELECT DISTINCT job_id
+FROM employees;
+
+
+-- AS를 사용하여 별칭 붙여 출력
+SELECT employee_id AS 사원번호, first_name AS 이름, last_name AS 성
+FROM employees;
+
