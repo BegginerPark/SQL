@@ -18,7 +18,109 @@ SELECT DISTINCT job_id
 FROM employees;
 
 
+
 -- AS를 사용하여 별칭 붙여 출력
 SELECT employee_id AS 사원번호, first_name AS 이름, last_name AS 성
 FROM employees;
+
+------------------------------------0405------------------------------------------------------
+
+SELECT employee_id, first_name, last_name
+FROM employees;
+-- select 뒤의 열들만 조회
+-- 명령어는 대문자 나머지는 소문자로 작성 권장
+
+
+SELECT employee_id, first_name, last_name
+FROM employees
+ORDER BY employee_id DESC;
+
+-- select 뒤의 열들만 조회
+-- employee_id를 기준으로 내림차순 DESC 정렬
+
+
+
+SELECT DISTINCT job_id
+From employees;
+
+-- job_id 를 기준으로 고유한 값들만 보여준다.
+-- 즉 중복된 값은 제거된 상태로 결과가 나온다.
+
+
+SELECT employee_id AS 사원이름, first_name AS 이름, last_name AS 성
+FROM employees;
+
+-- AS 를 사용하여 열 이름을 변경하여 출력한다.
+
+
+
+SELECT employee_id, first_name || last_name
+FROM employees;
+
+-- 두개의 열을 붙여서 하나의 데이터값으로 나타낸다.
+
+
+
+SELECT employee_id, 
+        first_name ||' ' || last_name,
+        email||'@'||'company.com'
+FROM employees;
+
+-- 두개의 열을 붙여서 하나의 데이터값으로 나타낸다.
+-- 가운데 한칸 띄우기 
+
+
+SELECT employee_id AS 사원이름, 
+        salary AS 급여, 
+        salary+500 AS 추가급여, 
+        salary-100 AS 인하급여, 
+        (salary*1.1)/2 AS 조정급여
+FROM employees;
+
+-- 새로운 열을 생성한 것이 아니라 보여만 주는 것이다. 
+-- 열이름을 별명으로 잠시 보여줄때만 사용된다.
+
+
+SELECT *
+FROM employees
+WHERE employee_id = 100;
+
+-- 아이디가 100 인 사람의 정보만 출력
+
+
+SELECT *
+FROM employees
+WHERE first_name = 'David';
+
+-- first_name 이 David인 사람만 출력
+
+
+SELECT *
+FROM employees
+WHERE employee_id >= 105;
+
+-- employee_id 가 105 부터 그 이상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
